@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 import React from 'react';
 // import logo from "./logo.svg";
 import './App.css';
@@ -11,7 +12,6 @@ function App() {
           className="App-logo"
           alt="logo"
         />
-        <p id="location"></p>
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
@@ -19,23 +19,44 @@ function App() {
           Learn React
         </a>
 
-        <button
-          style={{ marginTop: '1rem' }}
-          onClick={() => {
-            const locationEl = document.getElementById('location');
-            locationEl.innerHTML = 'Getting position ...';
-
-            navigator.geolocation.getCurrentPosition((position) => {
-              locationEl.innerHTML =
-                'latitude : ' + position.coords.latitude + ', longitude : ' + position.coords.longitude;
-            });
-          }}
-        >
+        <p style={marginTop1} id="location"></p>
+        <button style={marginTop1} onClick={() => getCurrentPosition()}>
           Get Current Position
+        </button>
+
+        <img id="image" src="" style={{ marginTop: '1rem', textAlign: 'center' }} width="100%" alt="image_upload" />
+        <button style={marginTop1} onClick={() => getImage(Camera.PictureSourceType.CAMERA)}>
+          Camera
+        </button>
+        <button style={marginTop1} onClick={() => getImage(Camera.PictureSourceType.PHOTOLIBRARY)}>
+          Photo Library
         </button>
       </header>
     </div>
   );
 }
+
+const marginTop1 = { marginTop: '1rem' };
+
+const getCurrentPosition = () => {
+  const locationEl = document.getElementById('location');
+  locationEl.innerHTML = 'Getting position...';
+
+  navigator.geolocation.getCurrentPosition((position) => {
+    locationEl.innerHTML = 'latitude : ' + position.coords.latitude + ', longitude : ' + position.coords.longitude;
+  });
+};
+
+const getImage = (sourceType) => {
+  const image = document.getElementById('image');
+
+  navigator.camera.getPicture(
+    (imgData) => {
+      image.src = imgData;
+    },
+    (err) => {},
+    { sourceType: sourceType }
+  );
+};
 
 export default App;
