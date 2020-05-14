@@ -2,12 +2,14 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
+import Layout from './layout/Layout';
 import * as serviceWorker from "./serviceWorker";
 
 const renderReactDOM = () =>
   ReactDOM.render(
     <React.StrictMode>
-      <App />
+      {/* <App /> */}
+      <Layout />
     </React.StrictMode>,
     document.getElementById("root")
   );
