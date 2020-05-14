@@ -11,7 +11,7 @@ export default function Layout() {
     <Router>
       <ul className="row text-center border m-0 p-0 fixed-bottom" style={{ listStyleType: 'none' }}>
         <li className="col p-2">
-          <Link to="/">Home</Link>
+          <Link to="/" exact>Home</Link>
         </li>
         <li className="col p-2 border-left border-right">
           <Link to="/geolocation">Geolocation</Link>
