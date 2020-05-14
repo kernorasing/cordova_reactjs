@@ -6,7 +6,7 @@ import './App.css';
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
+      <header className="App-header container">
         <img
           src="https://icons.iconarchive.com/icons/goescat/macaron/512/stellarium-icon.png"
           className="App-logo"
@@ -20,17 +20,40 @@ function App() {
         </a>
 
         <p style={marginTop1} id="location"></p>
-        <button style={marginTop1} onClick={() => getCurrentPosition()}>
+        <button className="btn btn-light" style={marginTop1} onClick={() => getCurrentPosition()}>
           Get Current Position
         </button>
 
-        <img id="image" src="" style={{ marginTop: '1rem', textAlign: 'center' }} width="100%" alt="image_upload" />
-        <button style={marginTop1} onClick={() => getImage(Camera.PictureSourceType.CAMERA)}>
-          Camera
-        </button>
-        <button style={marginTop1} onClick={() => getImage(Camera.PictureSourceType.PHOTOLIBRARY)}>
-          Photo Library
-        </button>
+        <div className={!navigator.camera && 'invisible'}>
+          <div>
+            <img
+              id="image"
+              src="https://cdn.samsung.com/etc/designs/smg/global/imgs/support/cont/NO_IMG_600x600.png"
+              style={{ marginTop: '1rem', textAlign: 'center', maxWidth: '75%' }}
+              alt="image_upload"
+            />
+          </div>
+          <div className="row">
+            <div className="col-6">
+              <button
+                className="btn btn-block btn-light mr-1"
+                style={marginTop1}
+                onClick={() => getImage(Camera.PictureSourceType.CAMERA)}
+              >
+                Camera
+              </button>
+            </div>
+            <div className="col-6">
+              <button
+                className="btn btn-block btn-light"
+                style={marginTop1}
+                onClick={() => getImage(Camera.PictureSourceType.PHOTOLIBRARY)}
+              >
+                Photo Library
+              </button>
+            </div>
+          </div>
+        </div>
       </header>
     </div>
   );
