@@ -14,13 +14,13 @@ export default function CameraPage() {
       <div className="d-flex justify-content-center">
         <button
           className="btn btn-light mr-1"
-          onClick={() => {} /* getImage(Camera.PictureSourceType.CAMERA) */}
+          onClick={() => getImage(window.Camera.PictureSourceType.CAMERA)}
         >
           Camera
         </button>
         <button
           className="btn btn-light"
-          onClick={() => {} /* getImage(Camera.PictureSourceType.PHOTOLIBRARY) */}
+          onClick={() => getImage(window.Camera.PictureSourceType.PHOTOLIBRARY)}
         >
           Gallery
         </button>
@@ -42,5 +42,5 @@ const getImage = (sourceType) => {
 };
 
 const isMobile = () => {
-  return false; // !window.cordova || ['Android', 'iPhone'].every((s) => s !== device.platform);
+  return !window.cordova || ['Android', 'iPhone'].every((s) => s !== window.device.platform);
 };
