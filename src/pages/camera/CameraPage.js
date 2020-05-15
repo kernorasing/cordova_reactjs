@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function CameraPage() {
   return (
-    <div className="" style={{ minHeight: 'calc(100vh - 42px)', backgroundColor: '#282c34' }}>
+    <div className="" style={{ minHeight: 'calc(100vh - 43px)', backgroundColor: '#282c34' }}>
       <div className="text-center">
         <img
           id="image"
