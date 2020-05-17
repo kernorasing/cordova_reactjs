@@ -7,7 +7,7 @@ export default function GeolocationPage() {
       style={{ minHeight: 'calc(100vh - 43px)', backgroundColor: '#282c34' }}
     >
       <div>
-        <span id="location" className="text-light d-none"></span>
+        <p id="location" className="text-center text-light"></p>
         <div id="location-spinner" className="spinner-border text-light d-none" role="status">
           <span className="sr-only">Loading...</span>
         </div>
@@ -30,7 +30,7 @@ const getCurrentPosition = () => {
 
   navigator.geolocation.getCurrentPosition(
     (pos) => {
-      locationEl.innerHTML = 'latitude : ' + pos.coords.latitude + ', <br> longitude : ' + pos.coords.longitude;
+      locationEl.innerHTML = 'latitude : ' + pos.coords.latitude + '<br> longitude : ' + pos.coords.longitude;
       locationEl.className = locationEl.className.replace('d-none', '').trim();
       locationSpinnerEl.className = locationSpinnerEl.className.replace('d-inline-block', 'd-none').trim();
     },
