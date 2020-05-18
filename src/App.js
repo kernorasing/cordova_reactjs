@@ -10,6 +10,7 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p style={{ wordBreak: 'break-word' }}>{window.cordova && device.platform}</p>
+        <p>{process.env.REACT_APP_ENVIRONMENT_NAME} version {process.env.REACT_APP_BUILD_VERSION}</p>
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
