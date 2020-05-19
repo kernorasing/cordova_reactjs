@@ -9,8 +9,10 @@
 		"@testing-library/user-event": "^7.2.1",
 		"cordova-android": "^8.1.0",
 		"cordova-browser": "^6.0.0",
+		"cordova-line-login-plugin": "^1.2.6",
 		"cordova-plugin-camera": "^4.1.0",
 		"cordova-plugin-device": "^2.0.3",
+		"cordova-plugin-dialogs": "^2.0.2",
 		"cordova-plugin-geolocation": "^4.0.2",
 		"dotenv": "^8.2.0",
 		"env-cmd": "^10.1.0",
@@ -63,7 +65,9 @@
 			"cordova-plugin-device": {},
 			"phonegap-plugin-barcodescanner": {
 				"ANDROID_SUPPORT_V4_VERSION": "27.+"
-			}
+			},
+			"cordova-line-login-plugin": {},
+			"cordova-plugin-dialogs": {}
 		},
 		"platforms": [
 			"browser",
