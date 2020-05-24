@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "88382744121",
+    "firebase_url": "https://kernorasing.firebaseio.com",
+    "project_id": "kernorasing",
+    "storage_bucket": "kernorasing.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:88382744121:android:0fe16404552e6da6270fe8",
+        "android_client_info": {
+          "package_name": "com.nanthawut.reactjs"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "88382744121-7ckfqd9fp6uef1f1n5dbgumfpons6k5b.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBUSqerSzzFmDloFs-voN-MKaN-yp5IgVE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "88382744121-7ckfqd9fp6uef1f1n5dbgumfpons6k5b.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

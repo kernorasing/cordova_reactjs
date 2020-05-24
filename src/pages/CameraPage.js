@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function CameraPage() {
   return (
-    <div className="" style={{ minHeight: 'calc(100vh - 43px)', backgroundColor: '#282c34' }}>
+    <div className="page-container">
       <div className="text-center">
         <img
           id="image"
@@ -11,19 +11,17 @@ export default function CameraPage() {
           alt="image_upload"
         />
       </div>
-      <div className="d-flex justify-content-center">
-        <button
-          className="btn btn-light mr-1"
-          onClick={() => getImage(window.Camera.PictureSourceType.CAMERA)}
-        >
-          Camera
-        </button>
-        <button
-          className="btn btn-light"
-          onClick={() => getImage(window.Camera.PictureSourceType.PHOTOLIBRARY)}
-        >
-          Gallery
-        </button>
+      <div className="row w-100 m-0">
+        <div className="col-6 px-1">
+          <button className="btn btn-light btn-block rounded-0" onClick={() => getImage(window.Camera.PictureSourceType.CAMERA)}>
+            Camera
+          </button>
+        </div>
+        <div className="col-6 px-1">
+          <button className="btn btn-light btn-block rounded-0" onClick={() => getImage(window.Camera.PictureSourceType.PHOTOLIBRARY)}>
+            Gallery
+          </button>
+        </div>
       </div>
     </div>
   );

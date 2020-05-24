@@ -2,10 +2,7 @@ import React from 'react';
 
 export default function GeolocationPage() {
   return (
-    <div
-      className="d-flex justify-content-center align-items-center flex-column"
-      style={{ minHeight: 'calc(100vh - 43px)', backgroundColor: '#282c34' }}
-    >
+    <div className="page-container d-flex justify-content-center align-items-center flex-column">
       <div>
         <p id="location" className="text-center text-light"></p>
         <div id="location-spinner" className="spinner-border text-light d-none" role="status">

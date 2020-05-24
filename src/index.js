@@ -1,22 +1,22 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import "./index.css";
-import App from "./App";
-import Layout from './layout/Layout';
-import * as serviceWorker from "./serviceWorker";
+import React from 'react';
+import ReactDOM from 'react-dom';
+import './index.css';
+// import App from './App';
+import * as serviceWorker from './serviceWorker';
+import AppRouter from './Router';
 
 const renderReactDOM = () =>
   ReactDOM.render(
     <React.StrictMode>
-      <App />
+      <AppRouter />
     </React.StrictMode>,
-    document.getElementById("root")
+    document.getElementById('root')
   );
 
 if (window.cordova) {
-  document.addEventListener("deviceready", () => {
+  document.addEventListener('deviceready', () => {
     renderReactDOM();
-    console.log("ondeviceready");
+    console.log('ondeviceready');
   });
 } else {
   renderReactDOM();
