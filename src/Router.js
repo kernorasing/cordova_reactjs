@@ -10,7 +10,7 @@ export default function AppRouter() {
   return (
     <Router>
       <Link to="/" style={{ position: 'absolute', top: '1rem', left: '1rem' }} className="btn btn-sm btn-light rounded-pill">
-        <i className="fas fa-home"></i> Home
+        <i className="fas fa-home"></i> 
       </Link>
       <Switch>
         <Route exact path="/">
