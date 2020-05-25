@@ -38,7 +38,3 @@ const getImage = (sourceType) => {
     { sourceType: sourceType }
   );
 };
-
-const isMobile = () => {
-  return !window.cordova || ['Android', 'iPhone'].every((s) => s !== window.device.platform);
-};

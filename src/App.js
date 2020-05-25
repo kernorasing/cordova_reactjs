@@ -4,6 +4,13 @@ import logo from './logo.svg';
 import './App.css';
 import { Link } from 'react-router-dom';
 
+const menuList = [
+  { path: '/geolocation', imageURL: 'https://img.icons8.com/cotton/64/000000/worldwide-location--v2.png' },
+  { path: '/camera', imageURL: 'https://img.icons8.com/cotton/64/000000/compact-camera.png' },
+  { path: '/qrcode', imageURL: 'https://img.icons8.com/cotton/64/000000/barcode-scanner--v3.png' },
+  { path: '/fcm', imageURL: 'https://img.icons8.com/color/48/000000/firebase.png' },
+];
+
 function App() {
   return (
     <div className="App">
@@ -21,34 +28,15 @@ function App() {
           </a>
         </div>
         <div className="row justify-content-center w-100">
-          <Link to="/geolocation" className="col-4 mb-3">
-            <div className="card">
-              <div className="card-body">
-                <img src="https://img.icons8.com/cotton/64/000000/worldwide-location--v2.png" width={48} />
+          {menuList.map((val, i) => (
+            <Link to={val.path} className="col-4 mb-3" key={i}>
+              <div className="card">
+                <div className="card-body">
+                  <img src={val.imageURL} width={48} alt="" />
+                </div>
               </div>
-            </div>
-          </Link>
-          <Link to="/camera" className="col-4 mb-3">
-            <div className="card">
-              <div className="card-body">
-                <img src="https://img.icons8.com/cotton/64/000000/compact-camera.png" width={48} />
-              </div>
-            </div>
-          </Link>
-          <Link to="qrcode" className="col-4 mb-3">
-            <div className="card">
-              <div className="card-body">
-                <img src="https://img.icons8.com/cotton/64/000000/barcode-scanner--v3.png" width={48} />
-              </div>
-            </div>
-          </Link>
-          <Link to="fcm" className="col-4 mb-3">
-            <div className="card">
-              <div className="card-body">
-                <img src="https://img.icons8.com/color/48/000000/firebase.png" width={48} />
-              </div>
-            </div>
-          </Link>
+            </Link>
+          ))}
         </div>
       </header>
     </div>
