@@ -4,6 +4,11 @@ import './index.css';
 // import App from './App';
 import * as serviceWorker from './serviceWorker';
 import AppRouter from './Router';
+import { Plugins } from '@capacitor/core';
+
+Plugins.App.addListener('backButton', () => {
+  Plugins.App.exitApp();
+});
 
 const renderReactDOM = () =>
   ReactDOM.render(

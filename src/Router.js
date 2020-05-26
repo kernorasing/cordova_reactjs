@@ -5,6 +5,7 @@ import GeolocationPage from './pages/GeolocationPage';
 import CameraPage from './pages/CameraPage';
 import QRScannerPage from './pages/QRScannerPage';
 import FCMPage from './pages/FCMPage';
+import LineLoginPage from './pages/LineLoginPage';
 
 export default function AppRouter() {
   return (
@@ -27,6 +28,9 @@ export default function AppRouter() {
         </Route>
         <Route path="/fcm">
           <FCMPage />
+        </Route>
+        <Route path="/line">
+          <LineLoginPage />
         </Route>
       </Switch>
     </Router>
