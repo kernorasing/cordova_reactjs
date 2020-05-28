@@ -19,7 +19,8 @@ const renderReactDOM = () =>
   );
 
 if (window.cordova) {
-  document.addEventListener('deviceready', () => {
+  document.addEventListener('deviceready', async () => {
+    await Plugins.SplashScreen.hide();
     renderReactDOM();
     console.log('ondeviceready');
   });
