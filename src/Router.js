@@ -6,6 +6,16 @@ import CameraPage from './pages/CameraPage';
 import QRScannerPage from './pages/QRScannerPage';
 import FCMPage from './pages/FCMPage';
 import LineLoginPage from './pages/LineLoginPage';
+import PlaygroundPage from './pages/PlaygroundPage';
+
+export const routes = [
+	{ component: <GeolocationPage />, path: '/geolocation', imageURL: 'https://img.icons8.com/cotton/64/000000/worldwide-location--v2.png' },
+	{ component: <CameraPage />, path: '/camera', imageURL: 'https://img.icons8.com/cotton/64/000000/compact-camera.png' },
+	{ component: <QRScannerPage />, path: '/qrcode', imageURL: 'https://img.icons8.com/cotton/64/000000/barcode-scanner--v3.png' },
+	{ component: <FCMPage />, path: '/fcm', imageURL: 'https://img.icons8.com/color/48/000000/firebase.png' },
+	{ component: <LineLoginPage />, path: '/line', imageURL: 'https://img.icons8.com/color/48/000000/line-me.png' },
+	{ component: <PlaygroundPage />, path: '/playground', imageURL: 'https://img.icons8.com/dusk/64/000000/football.png' }
+];
 
 export default function AppRouter() {
   return (
@@ -14,24 +24,14 @@ export default function AppRouter() {
         <i className="fas fa-home"></i> 
       </Link>
       <Switch>
-        <Route exact path="/">
-          <App />
+        <Route exact path="/" >
+          <App menu={routes} />
         </Route>
-        <Route path="/geolocation">
-          <GeolocationPage />
-        </Route>
-        <Route path="/camera">
-          <CameraPage />
-        </Route>
-        <Route path="/qrcode">
-          <QRScannerPage />
-        </Route>
-        <Route path="/fcm">
-          <FCMPage />
-        </Route>
-        <Route path="/line">
-          <LineLoginPage />
-        </Route>
+        {routes.map((val, i) => (
+          <Route key={i} path={val.path}>
+            {val.component}
+          </Route>
+        ))}
       </Switch>
     </Router>
   );

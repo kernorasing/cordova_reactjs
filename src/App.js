@@ -4,15 +4,7 @@ import logo from './logo.svg';
 import './App.css';
 import { Link } from 'react-router-dom';
 
-const menuList = [
-	{ path: '/geolocation', imageURL: 'https://img.icons8.com/cotton/64/000000/worldwide-location--v2.png' },
-	{ path: '/camera', imageURL: 'https://img.icons8.com/cotton/64/000000/compact-camera.png' },
-	{ path: '/qrcode', imageURL: 'https://img.icons8.com/cotton/64/000000/barcode-scanner--v3.png' },
-	{ path: '/fcm', imageURL: 'https://img.icons8.com/color/48/000000/firebase.png' },
-	{ path: '/line', imageURL: 'https://img.icons8.com/color/48/000000/line-me.png' },
-];
-
-function App() {
+function App(props) {
 	return (
 		<div className="App">
 			<header className="App-header">
@@ -29,7 +21,7 @@ function App() {
 					</a>
 				</div>
 				<div className="row justify-content-center w-100">
-					{menuList.map((val, i) => (
+					{props.menu.map((val, i) => (
 						<Link to={val.path} className="col-4 mb-3" key={i}>
 							<div className="card">
 								<div className="card-body">
